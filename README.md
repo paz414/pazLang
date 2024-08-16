@@ -54,30 +54,29 @@ pazLang
    - Define necessary types and constants for the VM
 
 
-## Building
+## Creating Test File
+ * In the ```pazasm``` folder create a test file ```<input_name>.pazasm```
+ * Refer to the language description below and create an instruction
+ * Save the file 
 
-To build the project, you'll need a C++ compiler that supports C++11 or later. Use the following commands:
-
+# Generating the binary file
+* Change the current directory to ```pazasm``` folder & Use the following commands:
 ```
-# Build pazasm
-
-
-# Build stack-vm
-
-```
-
-## Usage
-Compiling pazasm code
-```
-./pazasm <input_file>
+make
 ```
 
-This will generate an ```a.out``` file containing the compiled bytecode.
+```
+./pazasm <input_test_name> 
+```
+* This will generate an ```a.out``` file containing the compiled bytecode.
 
-## Running bytecode
-
-
-
+# Running the bytecode
+```
+make
+```
+```
+./vm ../pazasm/a.out
+```
 ## pazasm Language
 pazasm is a simple stack-based assembly language. It supports the following operations:
 ```
@@ -89,15 +88,16 @@ pazasm is a simple stack-based assembly language. It supports the following oper
 
 Numbers are pushed onto the stack, and operations are performed on the top elements of the stack.
 
-##Example:
+## Example:
 ```
 5
 3
 +
 2
 *
-```
+
 This program pushes 5 and 3 onto the stack, adds them, then multiplies the result by 2.
+```
 
 ## Virtual Machine
 The VM is stack-based and uses 32-bit instructions. The instruction format is:
